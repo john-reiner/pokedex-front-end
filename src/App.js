@@ -4,31 +4,39 @@ import './App.css';
 
 function App() {
 
-  const [trainerName, setTrainerName] = useState('')
-  const [trainerpin, setTrainerpin] = useState(0)
-  const [pokemon, setPokemon] = useState('')
+  const [pokemonSearch, setPokemonSearch] = useState('')
+  const [pokemon, setPokemon] = useState([])
+  const [showCasePokemon, setShowCasePokemon] = useState([])
 
   useEffect(() => {
-    fetch('https://pokeapi.co/api/v2/pokemon/')
+    fetch('https://pokeapi.co/api/v2/pokemon?limit=9999')
     .then(result => result.json())
     .then(pokemon => setPokemon(pokemon.results))
   }, [])
 
-  const handleNameChange = (e) => setTrainerName(e.target.value)
-  
+  const handleSearchChange = (e) => setPokemonSearch(e.target.value)
+
   const handleSubmit = (e) => {
     e.preventDefault()
-    alert(`Thank you for sigining in ${trainerName} and using ${trainerpin} as your pin`)
+    console.log(pokemon)
+    let pokemonToShow = []
+    pokemon.forEach(pokemon => {
+      if (pokemon.name.includes(pokemonSearch)) {
+        pokemonToShow.push(pokemon.name)
+      }
+    });
+    console.log(pokemonToShow)
+    setShowCasePokemonc(pokemonToShow)
   }
 
   return (
     <div className="App">
       <h1>Pokedex</h1>
       <form onSubmit={handleSubmit} >
-        <input type="text" name="name" placeholder="Pokemon" onChange={handleNameChange}/>
+        <input type="text" name="name" placeholder="Pokemon" onChange={handleSearchChange}/>
         <input type="submit" value="Submit" />
       </form>
-      <div><Pokemon pokemon={pokemon}/></div>
+      <div><Pokemon showCasePokemon={showCasePokemon}/></div>
     </div>
   );
 }
