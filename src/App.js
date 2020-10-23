@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import Pokemon from './pokemon'
+
 import './App.css';
 
 function App() {
@@ -26,7 +27,7 @@ function App() {
       }
     });
     console.log(pokemonToShow)
-    setShowCasePokemonc(pokemonToShow)
+    setShowCasePokemon(pokemonToShow)
   }
 
   return (
