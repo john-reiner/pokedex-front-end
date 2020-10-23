@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import Pokemon from './pokemon'
-
+import SixPokemon from './sixPokemon'
 import './App.css';
 
 function App() {
@@ -33,6 +33,7 @@ function App() {
   return (
     <div className="App">
       <h1>Pokedex</h1>
+      <SixPokemon />
       <form onSubmit={handleSubmit} >
         <input type="text" name="name" placeholder="Pokemon" onChange={handleSearchChange}/>
         <input type="submit" value="Submit" />
