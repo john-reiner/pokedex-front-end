@@ -1,4 +1,5 @@
 import React from 'react'
+import Pokemon from './pokemon'
 
 export default function sixPokemon(props) {
 
@@ -6,7 +7,7 @@ export default function sixPokemon(props) {
     const renderMyPokemon = () => {
         if (props.sixPokemon) {
             return props.sixPokemon.map(pokemon => {
-                return <p>{pokemon}</p>
+                return <Pokemon removePokemon={props.removePokemon} name={pokemon} />
             })
         }
     }

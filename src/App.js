@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import Pokemon from './pokemon'
+import PokemonSearch from './pokemonSearch'
 import SixPokemon from './sixPokemon'
 import './App.css';
 
@@ -40,18 +40,21 @@ function App() {
     
   }
 
+  const removePokemon = (name) => {
+    console.log(name)
+  }
   
 
 
   return (
     <div className="App">
       <h1>Pokedex</h1>
-      <SixPokemon sixPokemon={sixPokemon} />
+      <SixPokemon sixPokemon={sixPokemon} removePokemon={removePokemon} />
       <form onSubmit={handleSubmit} >
         <input type="text" name="name" placeholder="Pokemon" onChange={handleSearchChange}/>
         <input type="submit" value="Submit" />
       </form>
-      <div><Pokemon addPokemon={addPokemon} showCasePokemon={showCasePokemon}/></div>
+      <div><PokemonSearch addPokemon={addPokemon} showCasePokemon={showCasePokemon}/></div>
     </div>
   );
 }
