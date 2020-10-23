@@ -7,8 +7,8 @@ export default function pokemon(props) {
             return props.showCasePokemon.map(pokemon => {
                 return (
                     <div className="pokemon" >                    
-                    <p>{pokemon}</p>
-                    <button>Add</button>
+                        <p>{pokemon}</p>
+                        <button onClick={() => props.addPokemon(pokemon)}>Add</button>
                     </div>
 
                     )

@@ -30,6 +30,10 @@ function App() {
     setShowCasePokemon(pokemonToShow)
   }
 
+  const addPokemon = (name) => {
+    console.log(name)
+  }
+
   return (
     <div className="App">
       <h1>Pokedex</h1>
@@ -38,7 +42,7 @@ function App() {
         <input type="text" name="name" placeholder="Pokemon" onChange={handleSearchChange}/>
         <input type="submit" value="Submit" />
       </form>
-      <div><Pokemon showCasePokemon={showCasePokemon}/></div>
+      <div><Pokemon addPokemon={addPokemon} showCasePokemon={showCasePokemon}/></div>
     </div>
   );
 }
