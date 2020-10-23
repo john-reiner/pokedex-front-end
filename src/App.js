@@ -8,6 +8,7 @@ function App() {
   const [pokemonSearch, setPokemonSearch] = useState('')
   const [pokemon, setPokemon] = useState([])
   const [showCasePokemon, setShowCasePokemon] = useState([])
+  const [sixPokemon, setsixPokemon] = useState([])
 
   useEffect(() => {
     fetch('https://pokeapi.co/api/v2/pokemon?limit=9999')
@@ -19,20 +20,28 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(pokemon)
     let pokemonToShow = []
     pokemon.forEach(pokemon => {
       if (pokemon.name.includes(pokemonSearch)) {
         pokemonToShow.push(pokemon.name)
       }
     });
-    console.log(pokemonToShow)
     setShowCasePokemon(pokemonToShow)
   }
 
   const addPokemon = (name) => {
-    console.log(name)
+    
+    if (sixPokemon.length < 6) {
+      setsixPokemon([...sixPokemon, name])
+      console.log(sixPokemon)
+    } else {
+      alert("no more than 6")
+    }
+    
   }
+
+  
+
 
   return (
     <div className="App">
