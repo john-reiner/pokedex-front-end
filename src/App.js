@@ -33,7 +33,7 @@ function App() {
     
     if (sixPokemon.length < 6) {
       setsixPokemon([...sixPokemon, name])
-      console.log(sixPokemon)
+      
     } else {
       alert("no more than 6")
     }
@@ -46,7 +46,7 @@ function App() {
   return (
     <div className="App">
       <h1>Pokedex</h1>
-      <SixPokemon />
+      <SixPokemon sixPokemon={sixPokemon} />
       <form onSubmit={handleSubmit} >
         <input type="text" name="name" placeholder="Pokemon" onChange={handleSearchChange}/>
         <input type="submit" value="Submit" />
