@@ -15,7 +15,7 @@ export default function sixPokemon(props) {
     return (
         <div>
             <h2>My Six Pokemon</h2>
-            {renderMyPokemon()}
+            {/* {renderMyPokemon()} */}
         </div>
     )
 }

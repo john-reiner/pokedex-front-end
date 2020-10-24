@@ -23,28 +23,26 @@ function App() {
     let pokemonToShow = []
     pokemon.forEach(pokemon => {
       if (pokemon.name.includes(pokemonSearch)) {
-        pokemonToShow.push(pokemon.name)
+        pokemonToShow.push(pokemon)
       }
     });
     setShowCasePokemon(pokemonToShow)
   }
 
   const addPokemon = (name) => {
-    
     if (sixPokemon.length < 6) {
-      setsixPokemon([...sixPokemon, name])
-      
+      setsixPokemon([...sixPokemon, name])  
     } else {
       alert("no more than 6")
     }
-    
   }
 
   const removePokemon = (name) => {
-    console.log(name)
-  }
-  
+    let index = sixPokemon.indexOf(name)
+    console.log(sixPokemon.splice(index, 1), sixPokemon)
 
+    setsixPokemon(sixPokemon)
+  }
 
   return (
     <div className="App">
