@@ -6,7 +6,7 @@ export default function pokemon(props) {
     const renderPokemon = () => {
         if (props.showCasePokemon) {
             return props.showCasePokemon.map(pokemon => {
-                return <Pokemon name={pokemon.name} addPokemon={props.addPokemon} />
+                return <Pokemon showPokemon={props.showPokemon} name={pokemon.name} />
                 
             })
         }
