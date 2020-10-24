@@ -30,23 +30,10 @@ function App() {
   }
 
   const showPokemon = (name) => {
-    console.log(name)
+    fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
+    .then(results => results.json())
+    .then(pokemon => setpokemonToShow(pokemon))
   }
-
-  // const addPokemon = (name) => {
-  //   if (sixPokemon.length < 6) {
-  //     setsixPokemon([...sixPokemon, name])  
-  //   } else {
-  //     alert("no more than 6")
-  //   }
-  // }
-
-  // const removePokemon = (name) => {
-  //   let index = sixPokemon.indexOf(name)
-  //   console.log(sixPokemon.splice(index, 1), sixPokemon)
-
-  //   setsixPokemon(sixPokemon)
-  // }
 
   return (
     <div className="App">
