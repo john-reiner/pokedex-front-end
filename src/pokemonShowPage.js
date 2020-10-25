@@ -3,14 +3,33 @@ import Pokemon from './pokemon'
 
 export default function sixPokemon(props) {
 
-    console.log(props)
+
+    const renderPokemon = () => {
+        if (props.pokemonToShow.name) {
+            console.log(props.pokemonToShow)
+            return (
+                <Pokemon 
+                    key={props.pokemonToShow.id} 
+                    id={props.pokemonToShow.id} 
+                    name={props.pokemonToShow.name}
+                    image={props.pokemonToShow.sprites.front_default}
+                />
+            )
+            
+        }
+        
+    }
+
     return (
         <div>
-            <Pokemon 
+            {/* <Pokemon 
                 key={props.pokemonToShow.id} 
                 id={props.pokemonToShow.id} 
-                name={props.pokemonToShow.name} 
-            />
+                name={props.pokemonToShow.name}
+                // image={props.pokemonToShow.sprites.front_default}
+                // color={props.pokemonToShow.color.name}
+            /> */}
+            {renderPokemon()}
         </div>
     )
 }

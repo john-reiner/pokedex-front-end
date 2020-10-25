@@ -11,8 +11,10 @@ export default function pokemon(props) {
     } else {
         return (
             <div>
+                <p>{props.id}</p>
                 <p>{props.name}</p>
-                {/* {console.log(props)} */}
+                <img src={props.image}/>
+                {console.log(props)}
             </div>
         )        
     }

@@ -35,6 +35,8 @@ function App() {
     .then(pokemon => setpokemonToShow(pokemon))
   }
 
+  // console.log(pokemonToShow)
+
   return (
     <div className="App">
       <h1>Pokedex</h1>
